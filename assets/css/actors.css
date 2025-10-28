@@ -1,0 +1,153 @@
+/*--------------------------------------------------------------
+# Font & Color Variables
+--------------------------------------------------------------*/
+:root {
+  --default-font: "Open Sans", sans-serif;
+  --heading-font: "Raleway", sans-serif;
+  --nav-font: "Poppins", sans-serif;
+
+  --background-color: #ffffff;
+  --default-color: #444444;
+  --heading-color: #191919;
+  --accent-color: #cc1616;
+  --surface-color: #ffffff;
+  --contrast-color: #ffffff;
+}
+
+/* Global Styles */
+body {
+  color: var(--default-color);
+  background-color: var(--background-color);
+  font-family: var(--default-font);
+}
+
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+a:hover {
+  color: color-mix(in srgb, var(--accent-color), transparent 25%);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--heading-color);
+  font-family: var(--heading-font);
+}
+
+/*--------------------------------------------------------------
+# Team Section
+--------------------------------------------------------------*/
+.big-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  position: relative;
+}
+
+.team .member {
+  background-color: var(--surface-color);
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  text-align: center;
+  margin-bottom: 20px;
+  margin-right: 10px;
+  transition: all 0.3s ease;
+  /* Smooth transition for hover effects */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* Add default shadow */
+  border-radius: 10px;
+  /* Rounded corners */
+  opacity: 0;
+  /* Initially hidden */
+  transform: translateY(30px);
+  /* Move the cards a bit down */
+  animation: fadeInUp 0.6s forwards;
+  /* Apply animation */
+}
+
+.team .member:nth-child(odd) {
+  animation-delay: 0.2s;
+  /* Delay for odd elements */
+}
+
+.team .member:nth-child(even) {
+  animation-delay: 0.4s;
+  /* Delay for even elements */
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    /* Bring cards to their original position */
+  }
+}
+
+.team .member:hover {
+  transform: scale(1.05);
+  /* Slightly increase size */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  /* Stronger shadow on hover */
+  cursor: pointer;
+  /* Pointer cursor on hover */
+}
+
+.team .member img {
+  border-radius: 50%;
+  max-width: 60%;
+  margin: 30px 0;
+  transition: all 0.3s ease;
+}
+
+.team .member:hover img {
+  transform: scale(1.1);
+  /* Enlarge image slightly on hover */
+}
+
+.team .member .member-content {
+  padding: 0 20px 30px 20px;
+}
+
+.team .member h4 {
+  font-weight: 700;
+  margin-bottom: 2px;
+  font-size: 18px;
+}
+
+.team .member span {
+  font-style: italic;
+  display: block;
+  font-size: 13px;
+  color: color-mix(in srgb, var(--default-color), transparent 20%);
+}
+
+.team .member p {
+  padding-top: 10px;
+  font-size: 14px;
+  font-style: italic;
+  color: color-mix(in srgb, var(--default-color), transparent 40%);
+}
+
+.team .member .social {
+  margin-top: 15px;
+}
+
+.team .member .social a {
+  color: color-mix(in srgb, var(--default-color), transparent 60%);
+  transition: 0.3s;
+}
+
+.team .member .social a:hover {
+  color: black !important;
+}
+
+.team .member .social i {
+  font-size: 18px;
+  margin: 0 2px;
+}
